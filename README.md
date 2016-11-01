@@ -1,4 +1,4 @@
-# A Crawler for ptt.cc
+# Web Crawler
 ###Crawler for ptt.cc.
 
 ####This is a small project that can crawl content from ptt.cc (批踢踢實業坊). 
