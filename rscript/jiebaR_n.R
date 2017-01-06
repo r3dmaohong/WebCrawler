@@ -54,15 +54,15 @@ jiebaR_n <- function(x_data, forum_name = "", recent = 0, last = 0){
   }
   
   ##Extract words which is noun.
-  get_noun = function(x){
+  get_noun <- function(x){
     stopifnot(inherits(x,"character"))
     index = names(x) %in% c("n","nr","nr1","nr2","nrj","nrf","ns","nsf","nt","nz","nl","ng")
     x[index]
   }
   
-  jieba_x = {}
-  jieba_x_noun = {}
-  x_data = tolower(x_data)
+  jieba_x      <- {}
+  jieba_x_noun <- {}
+  x_data       <- tolower(x_data)
   
   #x_data = x_data[,2]
   #Remove all punctuation except comma[^[:alnum:],]
