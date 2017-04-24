@@ -103,7 +103,7 @@ pttCrawler <- function(inputquery, min = 1, max = 9999999, wordquery = TRUE){
   # End ####
   cat("\n ")
   cat("Crawler Completed.")
-  return(list("articles" = articleContent_df,  "replies" = articleContent_df))
+  return(list("articles" = articleContent_df,  "replies" = articleReplies_df))
 }
 
 # Brief description.

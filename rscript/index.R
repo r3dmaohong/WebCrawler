@@ -26,9 +26,19 @@ write.csv(lineqResult$articles, paste0("output/", query, "/", fndate, "/", fn, "
 write.csv(lineqResult$replies, paste0("output/", query, "/", fndate, "/", fn, "_replies.csv"), row.names = FALSE)
 write_jsonf(lineqResult$articles, paste0("output/", query, "/", fndate, "/", fn, "_articles.json"))
 write_jsonf(lineqResult$replies, paste0("output/", query, "/", fndate, "/", fn, "_replies.json"))
-#tmp <- read_jsonf(paste0("output/", query, "/", fndate, "/", fn, "_replies.json"))
+#tmp <- read_jsonf(paste0("output/", query, "/", fndate, "/", fn, "_articles.json"))
 # End ####
-
+if(F){
+  x1 <- 'pretty\\u003D\\u003Ebig'
+  x2 <- parse(text = paste0("'", x1, "'"))
+  x3 <- x2[[1]]
+  x3
+  # [1] "pretty=>big"
+  is.character(x3)
+  # [1] TRUE
+  length(x3)
+  # [1] 1
+}
 
 ##auto-crawling
 #min <- 1

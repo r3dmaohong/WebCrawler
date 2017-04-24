@@ -46,7 +46,7 @@ lineqCrawler <- function(inputquery, min = 1, max = 9999999, wordquery = TRUE){
   for(i in min:max){
     url       <- paste(link, i, sep = "")
     links <- read_html(html_session(url, user_agent(uastring))) %>% html_nodes("p a") %>% html_attr("href")
-    if(toString(title_css) != ""){
+    if(toString(links) != ""){
       article_links <- c(article_links, links)
       gc()
       cat("\r LineQ Page ",i)
@@ -98,7 +98,7 @@ lineqCrawler <- function(inputquery, min = 1, max = 9999999, wordquery = TRUE){
   # End ####
   cat("\n ")
   cat("Crawler Completed.")
-  return(list("articles" = articleContent_df,  "replies" = articleContent_df))
+  return(list("articles" = articleContent_df,  "replies" = articleReplies_df))
 }
 
 # Brief description.
