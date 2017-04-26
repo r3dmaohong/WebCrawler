@@ -14,7 +14,7 @@ eval(parse("rscript\\lineq.R", encoding="UTF-8"))
 details(lineqCrawler)
 docstring::docstring(lineqCrawler)
 
-query       <- "¦ò¥ú"
+query       <- "µØ®L"
 lineqResult <- lineqCrawler(query)
 
 getwd()
@@ -39,6 +39,22 @@ if(F){
   length(x3)
   # [1] 1
 }
+
+## Ptt Cralwer
+query       <- "SENIORHIGH"
+pttResult <- pttCrawler(query, min = 1000)
+
+getwd()
+fn     <- paste0("ptt_", query)
+fndate <- format(Sys.Date(), "%Y%m%d")
+dir.create(paste0("output/", query, "/", fndate), recursive = TRUE)
+
+write.csv(pttResult$articles, paste0("output/", query, "/", fndate, "/", fn, "_articles.csv"), row.names = FALSE)
+write.csv(pttResult$replies, paste0("output/", query, "/", fndate, "/", fn, "_replies.csv"), row.names = FALSE)
+write_jsonf(pttResult$articles, paste0("output/", query, "/", fndate, "/", fn, "_articles.json"))
+write_jsonf(pttResult$replies, paste0("output/", query, "/", fndate, "/", fn, "_replies.json"))
+#tmp <- read_jsonf(paste0("output/", query, "/", fndate, "/", fn, "_articles.json"))
+
 
 ##auto-crawling
 #min <- 1
